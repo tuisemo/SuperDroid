@@ -1,0 +1,49 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR\\.factory\\hooks\\pre-edit-protect.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR\\.factory\\hooks\\auto-format.ps1\"",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Execute",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR\\.factory\\hooks\\post-failure-check.ps1\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR\\.factory\\hooks\\supervisor-replan.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

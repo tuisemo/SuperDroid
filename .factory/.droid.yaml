@@ -1,0 +1,11 @@
+signals:
+  enabled: true
+  mode: aggressive
+  capture_failures: true
+  auto_inject_lessons: true
+  max_lesson_age_days: 30
+
+review:
+  guidelines:
+    - path: "**/*.py"
+      guideline: "Follow PEP8 + type hints; use pytest fixtures"
