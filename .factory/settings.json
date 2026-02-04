@@ -52,6 +52,16 @@
         "hooks": [
           {
             "type": "command",
+            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/change-tracker.ps1\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/code-quality-gate.ps1\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
             "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/auto-format.ps1\"",
             "timeout": 45
           }
