@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-init-check.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-init-check.ps1\"",
             "timeout": 30
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/command-validator.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/command-validator.ps1\"",
             "timeout": 5
           }
         ]
@@ -30,8 +30,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/enhanced-file-protect.ps1\"",
-            "timeout": 5
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/enhanced-file-protect.ps1\"",
+            "timeout": 3
           }
         ]
       },
@@ -40,8 +40,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/pre-read-analyzer.ps1\"",
-            "timeout": 3
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/pre-read-analyzer.ps1\"",
+            "timeout": 2
           }
         ]
       }
@@ -52,18 +52,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/change-tracker.ps1\"",
-            "timeout": 5
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/change-tracker.ps1\"",
+            "timeout": 3
           },
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/code-quality-gate.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/code-quality-gate.ps1\"",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/auto-format.ps1\"",
-            "timeout": 45
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/auto-format.ps1\"",
+            "timeout": 30
           }
         ]
       }
@@ -74,7 +74,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/subtask-validator.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/subtask-validator.ps1\"",
             "timeout": 10
           }
         ]
@@ -86,7 +86,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/pre-compact-warn.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/pre-compact-warn.ps1\"",
             "timeout": 5
           }
         ]
@@ -98,7 +98,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-summaries.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-summaries.ps1\"",
             "timeout": 15
           }
         ]
@@ -110,7 +110,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-cleanup.ps1\"",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:FACTORY_PROJECT_DIR/.factory/hooks/session-cleanup.ps1\"",
             "timeout": 20
           }
         ]
